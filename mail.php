@@ -1,4 +1,4 @@
-<?php
+<?
 	//	receiving the form values
    $to = 'pavanoltraining@gmail.com';
     $name = $_POST["name"];
@@ -22,8 +22,12 @@
         
     </table>';
 
-	@mail($to, $email, $message, $headers))
-    echo 'Your message has been sent.';
-    header('Location: contact.html');
+	if (@mail($to, $email, $message, $headers))
+    {
+        echo 'Your message has been sent.';
+    }else{
+        echo 'failed';
+    }
+	header('Location: contact.html');
 
 ?>
