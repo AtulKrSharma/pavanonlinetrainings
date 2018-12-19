@@ -22,12 +22,8 @@
         
     </table>';
 
-    if (@mail($to, $email, $message, $headers))
-    {
-        echo 'Your message has been sent.';
-    }else{
-        echo 'failed';
-    }
-	header('Location: contact.html');
+	@mail($to, $email, $message, $headers))
+    echo 'Your message has been sent.';
+    header('Location: contact.html');
 
 ?>
