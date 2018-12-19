@@ -1,12 +1,13 @@
 <?php
-    $to = 'pavanoltraining@gmail.com';
+	//	receiving the form values
+   $to = 'pavanoltraining@gmail.com';
     $name = $_POST["name"];
     $email= $_POST["email"];
     $text= $_POST["message"];
     $subject= $_POST["subject"];
     
-
-
+	$to  = "pavanoltraining@gmail.com," . "pavanonlinetrainings@mail.com" ; // note the comma
+	
     $headers = 'MIME-Version: 1.0' . "\r\n";
     $headers .= "From: " . $email . "\r\n"; // Sender's E-mail
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
@@ -27,5 +28,6 @@
     }else{
         echo 'failed';
     }
+	header('Location: contact.html');
 
 ?>
