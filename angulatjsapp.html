@@ -4,12 +4,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
   </head>
+  
+  <style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
   <body>
     <div>
       <label>Name:</label>
       <input type="text" ng-model="yourName" placeholder="Enter a name here">
       <hr>
-      <h1>Hello {{yourName}}!</h1>
+      <h1 ng-bind="yourName with greet">Hello {{yourName}}!</h1>
     </div>
 
     <h1>Student Information:</h1>
@@ -41,7 +58,7 @@
         <div class="form-group">
             <label for="gender" class="col-sm-3 control-label">Gender</label>
             <div class="col-sm-2">
-                <select id="gender" class="form-control" ng-model="student.gender">
+                <select id="gender" class="form-control" ng-options="student.gender">
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
@@ -49,6 +66,8 @@
             <div class="col-sm-7"></div>
         </div>
         
+		
+		
         <div class="form-group">
             <div class="col-sm-3"></div>
             <div class="col-sm-2">
@@ -113,6 +132,28 @@
             };
     });
     </script>   
+	
+	<div ng-app="myApp" ng-controller="customersCtrl"> 
+
+<table>
+  <tr ng-repeat="x in names">
+    <td>{{ $index + 1 }}</td>
+    <td>{{ x.Name }}</td>
+    <td>{{ x.Country }}</td>
+  </tr>
+</table>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("customers.php")
+    .then(function (response) {$scope.names = response.data.records;});
+});
+</script>
+
+
     
   </body>
 </html>
