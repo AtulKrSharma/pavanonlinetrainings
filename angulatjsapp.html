@@ -3,16 +3,14 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
-	
-     	  
+	 	  
   </head>
   
   <style>
 .content {
-  max-width: 500px;
-  
-  width: 80%;
-  padding: 50px;
+  max-width: 900px;
+  width: 100%;
+  padding: 80px;
 }
 </style>
   
@@ -55,11 +53,18 @@
         </div>
         
         <div class="form-group">
-            <label for="gender" class="col-sm-3 control-label">Gender</label>
+            <label for="location" class="col-sm-3 control-label">Country</label>
             <div class="col-sm-2">
-                <select id="gender" class="form-control" ng-options="student.gender">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                <select id="gender" class="form-control" ng-options="student.loc">
+                    <option value="male">India</option>
+					<option value="male">USA</option>
+                   <option value="male">UK</option>
+				    <option value="male">AUSTRALIA</option>
+					 <option value="male">FRANCE</option>
+					  <option value="male">JAPAN</option>
+					   <option value="male">NEW ZEALAND</option>
+					    <option value="male">ROMANIA</option>
+
                 </select>
             </div>
             <div class="col-sm-7"></div>
@@ -70,24 +75,24 @@
         <div class="form-group">
             <div class="col-sm-3"></div>
             <div class="col-sm-2">
-                <span><b>Training Location</b></span>
+                <span><b>Training Mode</b></span>
                 <div class="radio">
                     <label><input value="online" type="radio" name="training" ng-model="student.trainingType" />Online</label>
                 </div>
                 <div class="radio">
-                    <label><input value="onsite" type="radio" name="training" ng-model="student.trainingType" />OnSite</label>
+                    <label><input value="onsite" type="radio" name="training" ng-model="student.trainingType" />Class Room</label>
                 </div>
             </div>
             <div class="col-sm-7">
-                <span><b>Main Subjects</b></span>
+                <span><b>Courses:</b></span>
                 <div class="checkbox">
-                    <label><input type="checkbox" ng-model="student.maths" />Maths</label>
+                    <label><input type="checkbox" ng-model="student.maths" />Automation Testing</label>
                 </div>
                 <div class="checkbox">
-                    <label><input type="checkbox" ng-model="student.physics" />Physics</label>
+                    <label><input type="checkbox" ng-model="student.physics" />DevOps</label>
                 </div>
                 <div class="checkbox">
-                    <label><input type="checkbox"  ng-model="student.chemistry" />Chemistry</label>
+                    <label><input type="checkbox"  ng-model="student.chemistry" />RPA</label>
                 </div>
             </div>
         </div>
@@ -95,12 +100,9 @@
         <input type="submit" value="Save" class="btn btn-primary col-sm-offset-3" /> 
         <input type="reset" value="Reset" ng-click="resetForm()" class="btn" /> <br/>
 		
-		
-			
-		
-		
     </form>
-	
+  </body>
+  
     <script>
      //1. create app module 
         var studentApp = angular.module('studentApp', []);
@@ -115,9 +117,9 @@
                 DoB: new Date('01/31/1980'),
                 gender: 'male',
                 trainingType: 'online',
-                maths: false,
-                physics: true,
-                chemistry: true
+                Automation Testing: false,
+                DevOps: true,
+                RPA: true
             };
 
             //4. copy originalStudent to student. student will be bind to a form 
@@ -137,10 +139,7 @@
     });
     </script>   
 	
-	
-	
 
-  </body>
 </html>
 
 <!-- 
