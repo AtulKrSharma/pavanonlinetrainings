@@ -453,6 +453,35 @@
 	</section>
 	<!-- End search-course Area -->
 	
+	
+	
+	
+	
+	
+	<!------ GOOGLE REVIEWS ------------------- -->
+		<div id="google-reviews"></div>
+
+		<link rel="stylesheet" href="https://cdn.rawgit.com/stevenmonson/googleReviews/master/google-places.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/stevenmonson/googleReviews@6e8f0d794393ec657dab69eb1421f3a60add23ef/google-places.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBQlAEabWA1Qyl8Jylw6ynKFkjmx2es6xw&signed_in=true&libraries=places"></script>
+
+		<script>
+		jQuery(document).ready(function( $ ) {
+		   $("#google-reviews").googlePlaces({
+				placeId: 'ChIJJSQr1f6NyzsRZik5j8BMTeE' 
+			  , render: ['reviews']
+			  , min_rating: 4
+			  , max_rows:4
+		   });
+		});
+		</script>
+
+	<!------ GOOGLE REVIEWS END------------------- -->
+	
+	
+	
+	
 	<!-- Start review Area1 -->
 	<section class="review-area section-gap relative">
 		<div class="overlay overlay-bg"></div>
