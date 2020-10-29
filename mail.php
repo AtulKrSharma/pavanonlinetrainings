@@ -1,4 +1,5 @@
- $to = 'pavanoltraining@gmail.com'; // replace this mail with yours
+<?php
+$to = 'pavanoltraining@gmail.com'; // replace this mail with yours
 $firstname = $_POST["fname"];
 $email= $_POST["email"];
 $headers = 'MIME-Version: 1.0' . "\r\n";
@@ -16,3 +17,4 @@ if (@mail($to, $email, $message, $headers))
 }else{
     echo 'failed';
 }
+?>
