@@ -15,6 +15,7 @@ $message ='<table style="width:100%">
 
 if (@mail($to, $email, $message, $headers))
 {
+	header('Location: contact.html');
     echo 'The message has been sent.';
 }
 				
